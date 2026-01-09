@@ -3,81 +3,92 @@ import { v4 as uuidv4 } from 'uuid';
 
 const CarContext = createContext();
 
-// DATA BARU DENGAN IMAGE UNSPLASH (ANTI ERROR)
+// --- IMPORT ASSETS ---
+import tiggo8csh from '../assets/images/tiggo8csh.png';
+import tiggo8csh2 from '../assets/images/tiggo8csh2.webp';
+import tiggo8csh3 from '../assets/images/tiggo8csh3.webp';
+
+import tiggo8pro from '../assets/images/tiggo8pro.webp';
+import tiggo8pro2 from '../assets/images/tiggo8pro2.png';
+import tiggo8pro3 from '../assets/images/tiggo8pro3.webp';
+
+import tiggo8promax from '../assets/images/tiggo8promax.webp';
+import tiggo8promax2 from '../assets/images/tiggo8promax2.webp';
+import tiggo8promax3 from '../assets/images/tiggo8promax3.webp';
+
+import omodae5 from '../assets/images/omodaE5.png';
+import omodae52 from '../assets/images/omodaE52.webp';
+import omodae53 from '../assets/images/omodaE53.webp';
+
+// DATA BARU DENGAN IMAGE LOKAL (YANG KAMU IMPORT)
 const initialData = [
   {
     id: '1',
-    name: 'Tesla Model S Plaid',
-    price: '2.500.000.000',
-    description: 'Mobil listrik produksi massal dengan akselerasi tercepat di dunia. Masa depan ada di sini.',
-    // Image Tesla Merah (Unsplash)
-    image: 'https://images.unsplash.com/photo-1561820800-d3d4779fd367?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Chery Tiggo 8 Pro',
+    price: '528.500.000',
+    description: 'First Class Experience. Kombinasi sempurna antara performa mesin 2.0L Turbo dan kemewahan interior kelas atas.',
+    image: tiggo8pro, // Menggunakan import tiggo8pro
     gallery: [
-       'https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?q=80&w=1000&auto=format&fit=crop', // Interior
-       'https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?q=80&w=1000&auto=format&fit=crop'  // Detail
+        tiggo8pro2, 
+        tiggo8pro3  
     ],
     year: 2024,
-    color: 'Red Multi-Coat', 
-    modelPath: '/models/tesla.glb'
+    color: 'Deep Black', 
+    modelPath: null
   },
   {
     id: '2',
-    name: 'Porsche 911 Carrera',
-    price: '10.000.000.000',
-    description: 'Mobil balap legal jalan raya. Sayap belakang aktif DRS dan mesin 4.0L Flat-six.',
-    // Image Porsche Abu-abu/Silver (Unsplash)
-    image: 'https://images.unsplash.com/photo-1713034576048-0300107cf727?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Chery Tiggo 8',
+    price: '400.000.000', // Estimasi harga Tiggo 8 Basic
+    description: 'SUV 7-Seater premium yang mendefinisikan kenyamanan keluarga. Mesin tangguh dengan kabin yang luas dan teknologi terkini.',
+    image: tiggo8csh, // Variabel langsung (Benar)
     gallery: [
-        'https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?q=80&w=1000&auto=format&fit=crop', // Rear View
-        'https://images.unsplash.com/photo-1616976346398-0e0e8fd9a7f4?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1616976346398-0e0e8fd9a7f4?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  // Side (Blue accent variant)
+       tiggo8csh2, 
+       tiggo8csh3 
     ],
-    year: 2023,
-    color: 'Gray', 
-    modelPath: '/models/porsche.glb'
+    year: 2024,
+    color: 'Green Emerald', 
+    modelPath: null 
   },
   {
     id: '3',
-    name: 'Lamborghini Revuelto',
-    price: '12.500.000.000',
-    description: 'Banteng hybrid pertama. Kombinasi V12 Murni dengan 3 motor listrik.',
-    // Image Lamborghini Putih (Unsplash)
-    image: 'https://images.unsplash.com/photo-1731783052442-b64bd72bd16d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Tiggo 8 Pro Max',
+    price: '628.500.000',
+    description: 'The Ultimate AWD SUV. Flagship tertinggi dengan penggerak semua roda (AWD) dan fitur keselamatan ADAS terlengkap.',
+    image: tiggo8promax, // Menggunakan import tiggo8promax
     gallery: [
-        'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1000&auto=format&fit=crop', // Rear View
-        'https://images.unsplash.com/photo-1672717901551-fae3242e09ee?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  // Detail Wheel
+        tiggo8promax2,
+        tiggo8promax3 
     ],
     year: 2025,
-    color: 'Bianco Monocerus White',
-    modelPath: '/models/lambo.glb'
+    color: 'Grey Premium',
+    modelPath: null
   },
   {
     id: '4',
-    name: 'Rolls Royce Ghost',
-    price: '24.000.000.000',
-    description: 'Definisi kemewahan mutlak. Kabin senyap seperti ruang hampa udara.',
-    // Image Rolls Royce Putih (Unsplash)
-    image: 'https://images.unsplash.com/photo-1632548260498-b7246fa466ea?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Chery Omoda E5',
+    price: '498.800.000',
+    description: 'Born Global, Born Electric. Crossover EV futuristik dengan jarak tempuh 430KM dan akselerasi instan yang memukau.',
+    // PERBAIKAN DI SINI: Hapus kurung kurawal {}
+    image: omodae5, 
     gallery: [
-        'https://images.unsplash.com/photo-1727129499236-e8854b371177?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Interior
-        'https://images.unsplash.com/photo-1710210123872-b030a0a37200?q=80&w=672&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  // Front Detail
+        omodae52, 
+        omodae53  
     ],
-    year: 2024,
-    color: 'Classic White', 
-    modelPath: '/models/rolls_royce.glb'
+    year: 2025,
+    color: 'Pure White', 
+    modelPath: null
   }
 ];
 
 export const CarProvider = ({ children }) => {
   const [cars, setCars] = useState(() => {
-    // --- FORCE RESET LOGIC (PENTING!) ---
-    // Baris ini akan menghapus data lama di browser setiap kali lo refresh
-    // Jadi gambar error lama nggak bakal muncul lagi.
+    // --- FORCE RESET LOGIC ---
     localStorage.removeItem('cars'); 
     return initialData;
   });
 
   useEffect(() => {
-    // Simpan data baru ke local storage
     localStorage.setItem('cars', JSON.stringify(cars));
   }, [cars]);
 
