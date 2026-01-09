@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // TbBrandWhatsapp = Style Outline (Tabler), cocok sama Lucide
 import { TbBrandWhatsapp } from "react-icons/tb"; 
 import { X, Mail, MapPin, Award, Instagram, Linkedin } from 'lucide-react';
-import romiImage from '../assets/images/romi.jpg'; // Import gambar
+import romiImage from '../assets/images/romi.jpeg'; // Import gambar
 
 const ProfilePanel = ({ isOpen, onClose }) => {
   // Setup Link WA
@@ -89,7 +89,7 @@ const ProfilePanel = ({ isOpen, onClose }) => {
                     </div>
                     <div>
                         <p className="text-xs text-slate-400">Email Address</p>
-                        <p className="text-white font-medium">email@example.com</p>
+                        <p className="text-white font-medium">romiandre83@gmail.com</p>
                     </div>
                  </div>
 
@@ -99,7 +99,7 @@ const ProfilePanel = ({ isOpen, onClose }) => {
                     </div>
                     <div>
                         <p className="text-xs text-slate-400">Domicile</p>
-                        <p className="text-white font-medium">Sukabumi, West Java</p>
+                        <p className="text-white font-medium">Bogor, West Java</p>
                     </div>
                  </div>
               </div>

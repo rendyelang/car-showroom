@@ -5,7 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HeroCanvas from '../components/HeroCanvas';
 import ProfilePanel from '../components/ProfilePanel';
-import romiImage from '../assets/images/romi.jpg'; // Import gambar
+import romiImage from '../assets/images/romi.jpeg'; // Import gambar
 
 const Home = () => {
   const { cars } = useCars();
